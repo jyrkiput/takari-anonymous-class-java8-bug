@@ -1,0 +1,65 @@
+Apache Maven 3.2.3 (33f8c3e1027c3ddde99d3cdebad2656a31e8fdf4; 2014-08-11T23:58:10+03:00)
+Maven home: /home/jyrki/programs/apache-maven-3.2.3
+Java version: 1.8.0_25, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.25.x86_64/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "3.17.2-200.fc20.x86_64", arch: "amd64", family: "unix"
+[INFO] Error stacktraces are turned on.
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building takari-initialization-block-bug 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- takari-lifecycle-plugin:1.8.5:process-resources (default-process-resources) @ takari-anonymous-class-java8-bug ---
+[INFO] Performing incremental build
+[INFO] 
+[INFO] --- takari-lifecycle-plugin:1.8.5:compile (default-compile) @ takari-anonymous-class-java8-bug ---
+[INFO] Performing incremental build
+[INFO] Compiling 1 sources to /home/jyrki/projects/takari/takari-anonymous-class-java8-bug/target/classes
+[INFO] Compiled 1 sources (250 ms)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 0.809 s
+[INFO] Finished at: 2014-11-20T09:56:59+02:00
+[INFO] Final Memory: 17M/1031M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal io.takari.maven.plugins:takari-lifecycle-plugin:1.8.5:compile (default-compile) on project takari-anonymous-class-java8-bug: Execution default-compile of goal io.takari.maven.plugins:takari-lifecycle-plugin:1.8.5:compile failed: Unexpected input change /home/jyrki/projects/takari/takari-anonymous-class-java8-bug/src/main/java/fi/sysart/takari/App.java -> [Help 1]
+org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal io.takari.maven.plugins:takari-lifecycle-plugin:1.8.5:compile (default-compile) on project takari-anonymous-class-java8-bug: Execution default-compile of goal io.takari.maven.plugins:takari-lifecycle-plugin:1.8.5:compile failed: Unexpected input change /home/jyrki/projects/takari/takari-anonymous-class-java8-bug/src/main/java/fi/sysart/takari/App.java
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:224)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:120)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:347)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:154)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:582)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:214)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:158)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+Caused by: org.apache.maven.plugin.PluginExecutionException: Execution default-compile of goal io.takari.maven.plugins:takari-lifecycle-plugin:1.8.5:compile failed: Unexpected input change /home/jyrki/projects/takari/takari-anonymous-class-java8-bug/src/main/java/fi/sysart/takari/App.java
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:143)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:208)
+	... 19 more
+Caused by: java.lang.IllegalStateException: Unexpected input change /home/jyrki/projects/takari/takari-anonymous-class-java8-bug/src/main/java/fi/sysart/takari/App.java
+	at io.takari.incrementalbuild.spi.DefaultBuildContext.commit(DefaultBuildContext.java:934)
+	at io.takari.incrementalbuild.maven.internal.MavenBuildContext.afterMojoExecutionSuccess(MavenBuildContext.java:45)
+	at org.apache.maven.execution.scope.internal.MojoExecutionScope.afterMojoExecutionSuccess(MojoExecutionScope.java:193)
+	at org.apache.maven.plugin.CompoundMojoExecutionListener.afterMojoExecutionSuccess(CompoundMojoExecutionListener.java:52)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	... 20 more
+[ERROR] 
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
